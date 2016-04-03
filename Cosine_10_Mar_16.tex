@@ -1,0 +1,835 @@
+\documentclass[11pt,a4paper]{article}
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx,psfrag,color}
+\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{enumerate}
+
+
+\setlength{\textwidth}{425pt}
+\setlength{\textwidth}{475pt}
+\setlength{\textheight}{595pt}
+\setlength{\topmargin}{-1.1cm}
+\setlength{\textheight}{655pt}
+\setlength{\oddsidemargin}{-14pt}
+\linespread{1.1}
+\usepackage[left=2cm,top=2.5cm,right=2cm,bottom=2cm]{geometry}
+\def \be  {\begin{equation}}
+\def \ee  {\end{equation}}
+\def \ba  {\begin{eqnarray}}
+\def \ea  {\end{eqnarray}}
+\def \nn  {\nonumber}
+\def \lam    {\Lambda}
+\def\rhoc{\rho_{0{\rm c}}}
+\def \om    {\Omega}
+\def \omx  {\Omega_{0X}}
+\def \omms   {\Omega_m}
+\def \omb   {\Omega_b}
+\def \omk   {\Omega_k}
+\def \omr   {\Omega_r}
+\def \omm  {\Omega_{0 {\rm m}}}
+\def \oml   {\Omega_{\Lambda 0}}
+\def\omc {\Omega_{\kappa}}
+\def \rb   {\bar{r}}
+\def \sb   {\bar{s}}
+\def \qb   {\bar{q}}
+
+\def \red{\textcolor{red}}
+\def \jav {\textcolor{red}{\bf JAV: }}
+
+\begin{document}
+\def\thefootnote{\fnsymbol{footnote}}
+
+\begin{center}
+\Large{\textbf{Why is $\Lambda$CDM model very successful?}} \\[0.5cm]
+
+\large{\"{O}zg\"{u}r Akarsu$^{\rm a}$, Tekin Dereli$^{\rm a}$, Suresh Kumar$^{\rm b}$, J. Alberto V\'{a}zquez$^{\rm c}$}
+\\[0.5cm]
+
+\small{
+\textit{$^{\rm a}$ Department of Physics, Ko\c{c} University, 34450 Sar{\i}yer, {\.I}stanbul, Turkey}}
+
+\vspace{.2cm}
+
+
+\small{
+\textit{$^{\rm b}$ Department of Mathematics, BITS-Pilani, Pilani Campus, Rajasthan-333031, India.}}
+
+\vspace{.2cm}
+
+\small{
+\textit{$^{\rm c}$ Brookhaven National Laboratory (BNL), Department of Physics, Upton, NY 11973-5000, USA}}
+
+\end{center}
+%
+%
+%\vspace{.6cm}
+
+%\hrule \vspace{0.3cm}
+\noindent \small{\textbf{Abstract}\\
+We have investigated....}
+\\
+\noindent
+\hrule
+\noindent \small{\\
+\textbf{Keywords:} Cosmological parameters $\cdot$  Accelerated expansion $\cdot$ Dark Energy  $\cdot$ $\Lambda$CDM }
+\def\thefootnote{\arabic{footnote}}
+\setcounter{footnote}{0}
+
+\let\thefootnote\relax\footnote{\textbf{E-Mail:} oakarsu@ku.edu.tr, tdereli@ku.edu.tr, suresh.kumar@pilani.bits-pilani.ac.in, jvazquez@bnl.gov}
+
+\def\thefootnote{\arabic{footnote}}
+\setcounter{footnote}{0}
+
+%\section*{Model 1}
+%\label{sec:intro}
+%The expansion history of the first model is
+%\begin{equation}
+%\label{eqn:Hzfull}\nonumber
+%H(z)=H_{0}\sqrt{\Omega_{\rm r0}\left(1+z\right)^{4}+\Omega_{\rm bc0}\left(1+z\right)^{3}+\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}+\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}+\Omega_{Z0}\left(1+z\right)^{-3}+\Omega_{\Lambda 0}},
+%\end{equation}
+%where
+%\begin{eqnarray}\nonumber
+%\label{HZcsina}
+%&&\Omega_{{\rm bc}0}=\frac{1}{81}\sin^{4}\left(\frac{k}{2}\right)\left[3\cot\left(\frac{k}{2}\right)+2n\right]^4,\\
+%\nonumber
+%&&\Omega_{X0}=-\frac{8n}{81}\sin^{4}\left(\frac{k}{2}\right)\left[3\cot\left(\frac{k}{2}\right)+2n\right]^3,\\
+%\nonumber
+%&&\Omega_{Y0}=-\frac{8n}{81}\sin^{4}\left(\frac{k}{2}\right)\left[3\cot\left(\frac{k}{2}\right)+2n\right] (9+4n^2),\\
+%\nonumber
+%&&\Omega_{Z0}=\frac{1}{81}\sin^{4}\left(\frac{k}{2}\right)(9+4n^2)^2,\\\nonumber
+%&&\Omega_{\Lambda 0}=1-\Omega_{{\rm r}0}-\Omega_{{\rm bc}0}-\Omega_{{\rm X}0}-\Omega_{{\rm Y}0}-\Omega_{{\rm Z}0}.
+%\end{eqnarray}
+%
+%With hard coded value of $\Omega_{{\rm r}0}$ in the code, the parameters to be constrained are  $H_0$, $n$ and $k$.
+%
+%\section*{Model 2}
+%The expansion history of the second model is
+%\begin{equation}
+% \label{eqn:Hzfull}\nonumber
+%H(z)=H_{0}\sqrt{\Omega_{\rm r0}\left(1+z\right)^{4}+\Omega_{\rm bc0}\left(1+z\right)^{3}+(1-\sqrt{\Omega_{bc0}})^2(1+z)^{-3}+\Omega_{\Lambda 0}},
+%\end{equation}
+%where
+%\[\Omega_{\Lambda 0}=1-\Omega_{{\rm r}0}-\Omega_{{\rm bc}0}-(1-\sqrt{\Omega_{bc0}})^2\]
+%Here $\Omega_{{\rm bc}0}=\Omega_{{\rm b}0}+\Omega_{{\rm c}0}$. The parameters to be constrained are $\Omega_{{\rm b}0}$, $\Omega_{{\rm c}0}$ and $H_0$.
+%\section*{Model 3}
+%The expansion history of the third model is
+%\begin{equation}
+% \label{eqn:Hzfull}\nonumber
+%H(z)=H_{0}\sqrt{\Omega_{\rm r0}\left(1+z\right)^{4}+\Omega_{\rm bc0}\left(1+z\right)^{3}+(1-\sqrt{\Omega_{bc0}})^2(1+z)^{-\alpha}+\Omega_{\Lambda 0}},
+%\end{equation}
+%where
+%\[\Omega_{\Lambda 0}=1-\Omega_{{\rm r}0}-\Omega_{{\rm bc}0}-(1-\sqrt{\Omega_{bc0}})^2\]
+%Here $\Omega_{{\rm bc}0}=\Omega_{{\rm b}0}+\Omega_{{\rm c}0}$. The parameters to be constrained are $\Omega_{{\rm b}0}$, $\Omega_{{\rm c}0}$, $\alpha$ and $H_0$.
+
+
+ \section{Sinusoidal law for deceleration parameter}
+\label{sec:cosine_law}
+
+In physics, approximations using a first few terms of a Taylor series or a Frourier series can make otherwise unsolvable problems possible for a restricted domain and can be used for as good approximations if sufficiently many terms are included. Using Fourier series general functions may be represented or approximated by sums of simpler trigonometric functions. In practice one wants to approximate the function with a finite number of terms, let's say with a Taylor polynomial or a partial sum of the trigonometric series, respectively. Approximations using the first few terms of a Taylor series can make otherwise unsolvable problems possible for a restricted domain; this approach is often used in physics. The partial sums (the Taylor polynomials) of the series can be used as approximations of the entire function. These approximations are good if sufficiently many terms are included. In the case of the Taylor series the error is very small in a neighborhood of the point where it is computed, while it may be very large at a distant point. In the case of the Fourier series the error is distributed along the domain of the function. Let us start by giving the dimensionless deceleration parameter using the formal expression of the Fourier series:
+\begin{equation}
+q(t)=-\frac{\ddot{a}a}{{\dot{a}}^2}=\frac{A_{0}}{2}+\sum_{i=1}^{\infty} A_{i}\cos\left(\frac{i\pi}{L}t\right)+\sum_{i=1}^{\infty} B_{i}\sin\left(\frac{i \pi}{L}t\right),
+\end{equation}
+where $a$ is the scale factor, $\{A_0,A_{1},..., \}$ and $\{B_0,B_{1},..., \}$ are sequences of real numbers. When only the first term of the expansion is considered it can describe the evolution of the universe in general relativity in the presence of single source with a constant EoS parameter. In this study we consider first two terms of the series and hence with
+\begin{equation}\label{eqn:DP}
+q=l+m \cos{\left(k\frac{t}{t_{0}}\right)}+n \sin{\left(k\frac{t}{t_{0}}\right)}
+\end{equation}
+where $t_{0}$ is the present age of the universe. Here $0\leq k< \pi$ is a constant and $l$ is the central value while $m>0$ and $n$ the constants determine the amplitudes of the correction terms $\cos$ and $\sin$ terms respectively. We shall also discuss the physically reasonable range range for $n$, below, when we obtain the physical ingredient of the universe in this model. We consider the de Sitter universe, which yields deceleration parameter equal to $-1$, as our base and hence choose $l=-1$. This choice gives us opportunity to solve $q$ for the scale factor $a$ explicitly. We should here note that the particular choice $k=0$ would result in $q=-1+m$ which corresponds to the power-law expansion as $a\propto t^{\frac{1}{m}}$, and hence in fact our parametrization covers also constant deceleration parameter solutions. The explicit solution of the parametrization given in \eqref{eqn:DP} for arbitrary values of $k$ under the assumption $a(t=0)=0$ gives the following:
+\begin{eqnarray}\label{CSSF} 
+a(t)=a_{1}\left[m+n \tan\left(\frac{kt}{2t_{0}}\right)\right]^{-\frac{1}{m}}\, {\tan\left(\frac{kt}{2t_{0}}\right)}^{\frac{1}{m}}
+\end{eqnarray}
+where $a_{1}$ is an integration constant, yielding the following Hubble parameter
+\begin{equation}
+\label{HPCSLDP}
+H=\frac{\dot{a}}{a}=\frac{k \csc ^2\left(\frac{k t}{2 t_0}\right)}{2t_0\left[ m \cot \left(\frac{k t}{2 t_0}\right)+ n \right]}.
+\end{equation}
+Let us now give the energy density $\rho_{\rm T}$ and pressure $p_{\rm T}$ of the corresponding total energy-momentum tensor for these kinematics using GR in the framework of spatially flat RW space-time:
+\begin{equation}
+\rho_{\rm T}=3H^2=\frac{3k ^2\csc ^4\left(\frac{k t}{2 t_0}\right)}{4t_0^2\left[ m \cot \left(\frac{k t}{2 t_0}\right)+ n \right]^2},
+\end{equation}
+\begin{equation}
+p_{\rm T}=-(2\dot{H}+3H^2)=\frac{k ^2\csc ^4\left(\frac{k t}{2 t_0}\right)\left[-3+2m\cos\left(k\frac{t}{t_0}\right)+2n\sin\left(k\frac{t}{t_0}\right)\right]}
+{4t_0^2\left[ m \cot \left(\frac{k t}{2 t_0}\right)+ n \right]^2}.
+\end{equation}
+The corresponding EoS parameter, on the other hand, reads as
+ \begin{equation}
+w_{\rm T}=\frac{p_{\rm T}}{\rho_{\rm T}}=-1+\frac{2}{3}\left[m\cos\left(k\frac{t}{t_0}\right)+n\sin\left(k\frac{t}{t_0}\right)\right].
+\end{equation}
+
+Substituting the scale factor \eqref{CSSF} of the model into $a=1/(1+z)$ and solving for $t$, we have
+\begin{equation}
+t=\frac{2t_0}{k}\arctan\left[\frac{m}{\left\{m\cot(k/2)+n\right\}(1+z)^m-n}\right].
+\end{equation}
+The Hubble parameter in red-shift is as follows:
+\begin{equation}
+\label{eqn:HzRaw}
+H(z)=\frac{1}{m^2}H_0 \sin ^2\left(\frac{k}{2}\right)  \left[ \left\{m \cot \left(\frac{k}{2}\right)+n\right\}^2(1+z)^m-2 n  
+\left\{m\cot \left(\frac{k}{2}\right)+n\right\}+(m^2+n^2)(1+z)^{-m}\right],
+\end{equation}
+where we set $a(t_0)=1$ and the Hubble constant $H(t_0)=H_0=\frac{k}{t_{0}m\sin(k)+t_{0}n(1-\cos(k))}$.
+
+We note that $a\rightarrow 0$, $H\rightarrow\infty$, $q\rightarrow-1+m$ and $w_{\rm T}\rightarrow-1+\frac{2}{3}m$ as $t\rightarrow 0$. We expect from a successful cosmological model that pressure-less matter, viz. matter source with the EoS parameter $w\cong 0$, would be dominant over dark energy source at red-shift values right after the red-shift of matter-radiation equality which would have occurred at $z\sim 3400$, i.e., when the age of the universe is at order of $10^{2}$ years old. In this study we are particularly interested in the universe since then the matter domination, and hence as like $\Lambda$CDM, we expect $w\rightarrow0$ (and hence $q\rightarrow\frac{1}{2}$ relying on GR) as $t\rightarrow 0$. Accordingly, we set $m=\frac{3}{2}$ in \eqref{eqn:HzRaw} so that obtain the following $H(z)$ involving matter source obeying the relation $\Omega_{{\rm m}}\propto (1+z)^3$ explicitly:
+\begin{equation}
+\label{eqn:Hzfull}
+H(z)=H_{0}\sqrt{\Omega_{\rm m0}\left(1+z\right)^{3}+\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}+\Omega_{\Lambda 0}+\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}+\Omega_{Z0}\left(1+z\right)^{-3}},
+\end{equation}
+where
+\begin{eqnarray}\nonumber
+\label{HZcsina}
+&&\Omega_{{\rm m}0}=\frac{1}{81}\sin^{4}\left(\frac{k}{2}\right)\left[3\cot\left(\frac{k}{2}\right)+2n\right]^4,\\
+\nonumber
+&&\Omega_{X0}=-\frac{8n}{81}\sin^{4}\left(\frac{k}{2}\right)\left[3\cot\left(\frac{k}{2}\right)+2n\right]^3,\\
+\nonumber
+&&\Omega_{\Lambda 0}=\frac{2}{27}\sin^{4}\left(\frac{k}{2}\right)\left[3\cot\left(\frac{k}{2}\right)+2n\right]^2(3+4n^2),\\
+\nonumber
+&&\Omega_{Y0}=-\frac{8n}{81}\sin^{4}\left(\frac{k}{2}\right)\left[3\cot\left(\frac{k}{2}\right)+2n\right] (9+4n^2),\\
+\nonumber
+&&\Omega_{Z0}=\frac{1}{81}\sin^{4}\left(\frac{k}{2}\right)(9+4n^2)^2,
+\end{eqnarray}
+which are the density parameters of the effective components at the present age of the universe, i.e. at $z=0$, and satisfy $\Omega_{{\rm m}0}+\Omega_{\Lambda 0}+\Omega_{X0}+\Omega_{Y0}+\Omega_{Z0}=1$. Assuming each $\Omega$ represent a distinct energy source interacting minimally with others, then due to the relation $\rho\propto (1+z)^{3(1+w)}$, corresponding EoS parameters would be as follows: $w_{m}=0$, $w_{X}=-\frac{1}{2}$, $w_{\Lambda}=-1$, $w_{Y}=-\frac{3}{2}$ and $w_{Z}=-2$. We note that $\Omega_{{\rm m}}=\Omega_{{\rm m}0}(1+z)^{3}$ stands for matter source and consider the remaining part as the dark energy source:
+\begin{equation}
+\Omega_{\rm DE}=\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}+\Omega_{\Lambda 0}+\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}+\Omega_{Z0}\left(1+z\right)^{-3},
+\end{equation}
+and hence
+\begin{equation}
+\Omega_{{\rm DE}0}=1-\Omega_{{\rm m}0}=\Omega_{X0}+\Omega_{\Lambda 0}+\Omega_{Y0}+\Omega_{Z0}.
+\end{equation}
+We started with a deceleration parameter oscillating and eventually ended up with a model that given by $H(z)$ consists of several density parameters in the power-law form. However, it is important to note that each density parameter is not a new free parameter; two parameter $k$ and $n$ determines all five density parameters at once. We note that $\Omega_{\rm DE}$ is consist of a constant term $\Omega_{\Lambda 0}$, which obviously stands as the cosmological constant, and three other terms $\Omega_{X0}$, $\Omega_{Y0}$ and $\Omega_{Z0}$. We note that being $0\leq k < \pi$ the parameter should satisfy the condition $-\frac{3}{2}\cot\left(\frac{k}{2}\right)<n\leq 0$, unless otherwise the energy density of the DE source would get negative values at some point in the expansion history of the universe. However, negative value of DE density could be quite useful as illustrated in the next section.
+
+Using the Hubble parameter \eqref{eqn:Hzfull}, the evolution of the deceleration parameter can be written as follows:
+\begin{equation}
+q=\frac{{\rm d}z}{{\rm d}t}\frac{{\rm d}}{{\rm d}z}\left(\frac{1}{H}\right)-1=\frac{\frac{1}{2}\Omega_{\rm m0}\left(1+z\right)^{3}-\frac{1}{4}\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}-\Omega_{\Lambda}-\frac{7}{4}\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}-\frac{5}{2}\Omega_{Z0}\left(1+z\right)^{-3}}{\Omega_{\rm m0}\left(1+z\right)^{3}+\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}+\Omega_{\Lambda}+\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}+\Omega_{Z0}\left(1+z\right)^{-3}},
+\end{equation}
+which gives
+\begin{equation}
+q_0\equiv q(z=0)=\frac{1}{2}\Omega_{\rm m0}-\frac{1}{4}\Omega_{X0}-\Omega_{\Lambda}-\frac{7}{4}\Omega_{Y0}-\frac{5}{2}\Omega_{Z0}
+\end{equation}
+for the present universe $q_{0}$.
+
+EoS parameter of the DE source is as follows:
+\begin{equation}
+w_{\rm DE}=-1+\frac{\frac{1}{2}\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}-\frac{1}{2}\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}-\Omega_{Z0}\left(1+z\right)^{-3}}{\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}+\Omega_{\Lambda}+\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}+\Omega_{Z0}\left(1+z\right)^{-3}}.
+\end{equation}
+
+\pagebreak
+
+\section{Observational constraints and comparison with $\Lambda$CDM model}\label{sec3}
+We explore the parameter space of SLDP model by making use of a modified version of a simple and fast Markov
+Chain Monte Carlo (MCMC) code, named SimpleMC.  This code contains a compressed version of the Planck data, a recent reanalysis of Type Ia supernova
+(SN) data, and high-precision BAO measurements at different redshifts up to $z < 2.36$ \cite{aub14}. It computes the expansion rates and distances from the Friedmann equation. Table \ref{tab:results} displays the constraints on the parameters of SLDP model from Planck+SN+BAO data with 68\% and 95\% confidence intervals (C.I.). On the other hand, Figure \ref{fig1} shows the one-dimensional marginalized distribution, and two-dimensional 68\% and 95\% confidence contours for the parameters of the SLDP model.
+
+
+
+
+
+\begin{table}[h]
+ \caption{Observational constraints on the parameters of SLDP model from Planck+SN+BAO data.} 
+\begin{center}
+\begin{tabular}{cccc}
+\hline\hline Parameter&Mean value&68\% C.I.&95\%C.I.\\ \hline \\
+$H_0$	& $ 67.48$& $[66.15,68.64]$&$[65.24,69.91]$ \\[8pt]
+$n$&  $-0.4059$&$[-0.5500, -0.1669]$&$[-0.7441, -0.1255]$ \\[8pt]
+$k$&$1.0428$ &$[0.8289,1.2275]$&$[0.7398,  1.3296]$ \\[8pt]
+\hline\hline
+\end{tabular}
+\label{tab:results}
+\end{center}
+\end{table}
+
+\begin{figure}[htb!]\centering
+\includegraphics[width=13cm]{Fig1.pdf}
+\caption{\footnotesize{One-dimensional marginalized distribution, and two-dimensional 68\%  and 95\% confidence contours for the parameters of the SLDP model. }}
+\label{fig1}
+\end{figure}
+
+
+
+
+
+\begin{table}[htb!]\centering\small
+\caption{\footnotesize{Mean values with 68\% C.I. of some important cosmological parameters  related to SLDP and $\Lambda$CDM models. In the fourth column, a schematic overlapping of C.I. is shown where Blue color rectangles correspond to SDPL model, and Red color rectangles pertain to the $\Lambda$CDM model.}} 
+\begin{tabular}{lcccc}
+\hline\hline Parameter & SLDP model  & $\Lambda$CDM model&Overlapping of C.I.\\ \hline\hline\\
+
+$H_0$ (${\rm km/s/Mpc}$)  & $67.48\;[66.15,68.64]$& $68.20\;[67.56,68.84]$& \begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{hz1.pdf}
+    \end{minipage}\\[8pt]
+
+$\Omega_{\rm m0}$ & $0.288\;[0.274,0.301]$ &$0.302\;[0.294,0.310]$& \begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_om0.pdf}
+    \end{minipage}\\[8pt]
+
+$w_{\rm DE0}$ & $ -1.025\;[-1.107,-0.942]$ & $ -1$&\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_wde.pdf}
+    \end{minipage}\\[8pt]
+
+$w_{\rm eff0}$ & $ -0.730\;[-0.791,-0.669]$ & $ -0.798\;[-0.706,-0.690]$&\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_weff.pdf}
+    \end{minipage}\\[8pt]
+
+$q_0$ & $-0.595\;[-0.687,-0.503]$ &$-0.547\; [-0.559,-0.536]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_q.pdf}
+    \end{minipage}\\[8pt]
+
+$j_{0}$ & $1.755\;[1.428,2.081]$ &1 &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_j.pdf}
+    \end{minipage} \\[8pt]
+    
+  $z_{\rm tr}$ & $0.58\;[0.54,0.62]$  & $0.67\;[0.64,0.69]$& \begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_ztr.pdf}
+    \end{minipage} \\[8pt]
+ 
+ $t_{\rm tr}$ (Gyr) & $8.04\;[7.82,8.30]$ & $7.53\;[7.41,7.66]$&\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_ttr.pdf}
+    \end{minipage}  \\[8pt]
+ 
+ $t_0 $ (Gyr)& $13.81\;[13.68,13.94]$ & $13.80\; [13.76,13.83]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_t0.pdf}
+    \end{minipage}  \\[8pt]
+ 
+ $z_{\rm dS}$ & $-0.21\;[-0.27,-0.15]$  & $-1$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_zds.pdf}
+    \end{minipage} \\[8pt]
+ 
+ $t_{\rm dS}$ (Gyr) & $17.30\; [16.26,18.52]$ & $\infty$& \\[8pt]
+ 
+$t_{\rm BR} $ (Gyr)& $34.60\;[ 32.19,37.02]$ & No Big Rip& \\[8pt]
+ 
+ \hline
+$\chi^2_{min}$ & $--$& $--$& \\[8pt]
+$\chi^2_{min}$/dof & $--$& $--$& \\[8pt]
+\hline\hline
+\end{tabular}
+\label{table:BRLCDM}
+\end{table}
+
+In Table 2, we display the mean values with 68\% C.I. of some important cosmological parameters  related to SLDP and $\Lambda$CDM models. In the fourth column, a schematic overlapping of C.I. is shown where Blue color rectangles correspond to SDPL model, and Red color rectangles pertain to the $\Lambda$CDM model. The representation of C.I. through color-filled rectangles is useful to compare the predictions of the two models, and seems quit efficient to visualize the results. We notice that the C.I. of the parameter $H_0$ corresponding to the SLDP and $\Lambda$ models overlap (see the overlapping of the Blue and Red rectangles). It means the two models are consistent in a common range with regard to the prediction of $H_0$ in the light of Planck+SN+BAO data. Likewise, we see that the two models agree with the predictions of the parameters $\Omega_{\rm m0}$, $w_{\rm DE0}$, $w_{\rm eff0}$ and $q_0$, but differ in case of $j_0$. The two models exhibit the difference in the predictions of transition redshift $z_{\rm tr}$ and transition time $t_{\rm tr}$, but interestingly both agree with the age of the Universe in a common range. Next, we observe that the SLDP model exhibits de Sitter phase in a finite time, but the $\Lambda$CDM does so asymptotically after infinite time. Likewise the SLDP Universe has a finite lifetime, and ends with a Big-Rip contrary to the non-stop eternal expansion of the $\Lambda$CDM Universe. In Figures 2 and 3, we display the evolution of the parameters  $w_{\rm DE}$, $w_{\rm eff}$, $j$ and $q$ vs $z$ for the SLDP and $\Lambda$CDM models. It is evident that the  SLDP model behaves similar to the $\Lambda$CDM model till the present epoch $z=0$, but  the two models differ significantly in future.
+
+
+
+
+
+\begin{figure}[htb!]\centering
+\includegraphics[width=8.3cm]{Fig5a.pdf}
+\includegraphics[width=8.3cm]{Fig5b.pdf}
+\caption{\footnotesize{Left Panel: Plot of $w_{DE}(z)$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP model. The horizontal red line stands for $w_\Lambda=-1$, the EoS parameter of dark energy in the $\Lambda$CDM model. Right Panel: Plots of $w_{eff}(z)$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP (Gray color) and $\Lambda$CDM (Red color) models.}}
+\label{fig:5}
+\end{figure}
+
+\begin{figure}[htb!]\centering
+\includegraphics[width=8.3cm]{Fig6a.pdf}
+\includegraphics[width=8.3cm]{Fig6b.pdf}
+\caption{\footnotesize{Left Panel: Plots of $q(z)$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP (Gray color) and $\Lambda$CDM (Red color) models. Right Panel: Plot of $j(z)$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP model. The horizontal red line stands for $j_\Lambda=1$, the jerk parameter in the $\Lambda$CDM model. }}
+\label{fig:5}
+\end{figure}
+
+
+\pagebreak
+$\;$
+\pagebreak
+\subsection{Comparing the dark energies}
+In $\Lambda$CDM model the cosmological constant $\Lambda$ is the sole source of dark energy, but this is not the case in the SLDP model. In Table 4 and the adjacent pie chart, we show the contributions of various components to the overall dark energy of the SLDP model. We see that only about 45 percent of dark energy of the SLDP Universe is in the form of $\Lambda$ term. Though the SLDP model behaves like $\Lambda$CDM model up to the present Universe, but the contribution to dark energy from the cosmological constant  differ substantially in the two models. So the SLDP model is a good example for models where dark energy source is something quite different than cosmological constant, but can present a similar behaviour with $\Lambda$CDM for a long enough time.
+
+\begin{table}[h]
+\caption{\footnotesize{Dark energy components in SLDP model.}} 
+\centering
+\parbox{0.4\textwidth}{
+\begin{footnotesize}
+\begin{tabular}{cccc}
+\hline\hline Component&EoS &Mean value&68\% C.I.\\ \hline \\
+$\Omega_{X0}$&$-1/2$	& $ 0.211$& $[0.149,0.274]$\\[8pt]
+$\Omega_{\Lambda 0}$&$-1$&  $0.325$&$[0.285,0. 364]$ \\[8pt]
+$\Omega_{Y0}$&$-3/2$&$0.105$ &$[0.095,0.115]$ \\[8pt]
+$\Omega_{Z0}$&$-2$&$0.070$ &$[0.039,0.102]$ \\[8pt]
+\hline\hline
+\end{tabular}
+\end{footnotesize}
+}
+\qquad
+\begin{minipage}[c]{0.43\textwidth}%
+\centering
+\includegraphics[width=1\textwidth]{pie_plot_de.pdf}
+\label{fig:figure}
+\end{minipage}
+\end{table}
+
+\pagebreak
+
+\subsection{Checking for the BAO measurements}
+Baryon acoustic oscillations (BAO) in the pre-recombination
+epoch exhibit the peak in the matter correlation function. The BAO peak at a redshift $z$ is observed at an angular separation $r_d /[(1 + z)D_A (z)]$ and at a redshift separation
+$r_d /D_H (z)$, where $r_d$ is the sound horizon at the drag
+epoch, and $D_A$ and $D_H = c/H$ are the angular
+and Hubble distances, respectively. Thus, the peak position measurement at any redshift puts
+constraints on the combinations of cosmological parameters that determine $D_H /r_d$ and $D_A /r_d$ \cite{delubac15}. In order to analyze SLDP model in contrast with $\Lambda$CDM model with regard to BAO measurements, we shall utilize the observed measurements of $D_V/r_d$, $D_M/r_d$ and $D_H/r_d$ collected in Table II of Ref. \cite{aub14}. Note that $D_M/r_d$ and $D_A/r_d$ differ by a factor $(1+z)$. For details of various definitions and observed data points, one may refer to \cite{aub14} and references therein.
+
+
+Using Eq. (16) of Ref. \cite{aub14}, we find $r_d=150.128\pm1.358$ Mpc for the SLDP model, and $r_d=147.564\pm0.346$ Mpc for the $\Lambda$CDM model considering the constraints on the two models from Planck+SN+BAO data. In Figure 4, we show the plots of various distance curves for the SLDP and $\Lambda$CDM models considering the mean values of the parameters (See caption of the figure for more details). Both the models appear to have similar behavior with regard to the observed BAO measurements. 
+
+\begin{figure}[h]\centering
+\includegraphics[width=8.3cm]{dh_rd.pdf}
+\includegraphics[width=8.3cm]{dm_rd.pdf}
+\includegraphics[width=8.3cm]{dv_rd.pdf}
+\caption{\footnotesize{Plots of $zD_H(z)/r_d\sqrt{z}$, $D_M(z)/r_d\sqrt{z}$ and  $D_V(z)/r_d\sqrt{z}$ curves vs $z$ with logarithmic scale on horizontal axis in the redshift range from 0 to 1100. In each panel, the Blue curve corresponds to the SLDP model while the Red one stands for the $\Lambda$CDM model. The error bars in the upper left panel correspond to BOSS CMASS sample ($z=0.57$), LyaF auto-correlation ($z=2.34$) and LyaF-QSO cross correlation  ($z=2.36$) measurements of $D_H/r_d$; the error bars in the right upper panel correspond to BOSS CMASS sample ($z=0.57$), LyaF auto-correlation ($z=2.34$) and LyaF-QSO cross correlation ($z=2.36$) measurements of $D_M/r_d$, and the error bars in the lower panel correspond to 6dFGS ($z=0.106$), MGS ($z=0.15$) and BOSS LOWZ Sample ($z=0.32$) measurements of $D_V/r_d$, as displayed in Table 4. In each panel, the inset figures display the behavior of the curves more clearly with regard to the observed data points, without logarithmic scale on the horizontal axis.}}
+\label{fig:5}
+\end{figure}
+
+In order to quantify the behavior minutely, we present mean values with 68\% C.I. of observed BAO measurements at various redshifts along with the  related predictions by SLDP and $\Lambda$CDM models. In the fifth column, a schematic overlapping of C.I. is shown where Purple color rectangles stand for the observed BAO measurements, Blue color rectangles correspond to SLDP model, and Red color rectangles pertain to the $\Lambda$CDM model. For the $D_H/r_d$ measurements, we notice that the SLDP model agrees with the observed data point at $z=0.57$ (Purple and Blue rectangles overlap) while $\Lambda$CDM model does not agree with this point (the Red rectangle does not overlap with the Purple one). On the other hand, both the models fail to satisfy the observed range of $D_H/r_d$ at $z=2.34$ and $z=2.36$. In $D_M/r_d$ measurements, the $\Lambda$CDM model agrees with the observed range of $D_M/r_d(z=0.57)$, but SLDP model does not agree with a narrow margin. Both the models completely agree with the observed range of $D_M/r_d(z=2.34)$, but fail to predict the observed range of $D_M/r_d(z=2.34)$. In $D_V/r_d$ measurements, the two models show complete agreement with the observed ranges of $D_V/r_d(z=0.106)$  and $D_V/r_d(z=0.32)$ while showing a slight disagreement with  observed range of $D_V/r_d(z=0.15)$.
+
+\begin{table}[htb!]\centering\small
+\caption{\footnotesize{Mean values with 68\% C.I. of observed BAO measurements at various redshifts along with the  related predictions by SLDP and $\Lambda$CDM models. In the fifth column, a schematic overlapping of C.I. is shown where Purple color rectangles stand for the observed BAO measurements, Blue color rectangles correspond to SLDP model, and Red color rectangles pertain to the $\Lambda$CDM model}} 
+\begin{tabular}{lccccc}
+\hline\hline $D(z)/r_d$&Observed & SLDP model  & $\Lambda$CDM model&Overlapping of C.I.\\ \hline\hline\\
+
+$D_H/r_d(z=0.57)$  &  $20.75\;[20.02,21.48]$& $21.32\;[21.07,21.58]$&$21.80\;[21.72,21.88]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_dh57.pdf}
+    \end{minipage}\\[8pt]
+    $D_H/r_d(z=2.34)$  &  $9.18\;[8.90,9.46]$& $8.42\;[8.31,8.53]$&$8.61\;[8.58,8.65]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_dh234.pdf}
+    \end{minipage}\\[8pt]
+$D_H/r_d(z=2.36)$  &  $9.00\;[8.70,9.30]$& $8.35\;[8.24,8.46]$&$8.54\;[8.51,8.57]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_dh236.pdf}
+    \end{minipage}\\[8pt]
+\hline\\
+
+$D_M/r_d(z=0.57)$  &  $14.945\;[14.735,15.155]$& $14.526\;[14.389,14.663]$&$14.685\;[14.590,14.779]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_dm57.pdf}
+    \end{minipage}\\[8pt]
+    $D_M/r_d(z=2.34)$  &  $37.675\;[35.504,39.846]$& $38.274\;[37.887,38.660]$&$39.116\;[39.004,39.229]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_dm234.pdf}
+    \end{minipage}\\[8pt]
+$D_M/r_d(z=2.36)$  &  $36.288\;[34.944,37.632]$& $38.441\;[38.053,38.829]$&$39.288\;[39.175,39.400]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_dm236.pdf}
+    \end{minipage}\\[8pt]
+\hline\\
+
+$D_V/r_d(z=0.106)$  &  $3.047\;[2.910,3.184]$& $3.038\;[3.018,3.059]$&$3.054\;[3.046,3.062]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_dv106.pdf}
+    \end{minipage}\\[8pt]
+    $D_V/r_d(z=0.15)$  &  $4.480\;[4.282,4.678]$& $4.236\;[4.204,4.268]$&$4.259\;[4.248,4.270]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_dv15.pdf}
+    \end{minipage}\\[8pt]
+$D_V/r_d(z=0.32)$  &  $8.467\;[8.300,8.634]$& $8.488\;[8.382,8.593]$&$8.560\;[8.543,8.576]$ &\begin{minipage}{3cm}
+      \includegraphics[width=3cm, height=0.5cm]{oci_dv32.pdf}
+    \end{minipage}\\[8pt]
+
+\hline\hline
+\end{tabular}
+\label{table:BRLCDM}
+\end{table}
+
+
+
+\section{Concluding Remarks}
+Considering Fourier series approximation of deceleration parameter, in this paper, we have shown that the SLDP model explains the background evolution of the Universe from the matter dominated epoch to the present dark energy dominated epoch just like the $\Lambda$CDM model. We notice that SLDP model does slightly better than the LCDM model with regard to the BOSS measurements. It appears that consideration of more terms in the Fourier series approximation of deceleration parameter would relieve the tension between different observational probes. However, consideration of more terms offers difficulty in analytical solution of the model.  Next, in the SLDP model we find that the future evolution of the Universe is entirely different from the one in LCDM model. For, in the SLDP model the Universe ends in Big Rip in finite time contrary to the de Sitter phase of the Universe in LCDM.  It may be noted that the SLDP model is independent of any theory of gravity.
+
+%We observe larger error region in the SLDP model in redshift range around 1 to 10. It appears that it happens because of the effective contribution from the sine term in equation (2) during this phase of evolution of the Universe. 
+
+\section{SLDP from Tree Level String Action}
+We consider gravi-dilaton string effective action in $(1+3+n)$-dimensions written in the {\sl string frame}:
+\begin{equation}
+\label{eqn:action}
+I = \int_{\mathcal{M}} {\rm d}^{1+3+n}x \sqrt{|g|} e^{-2 \varphi} \left \{ \mathcal{R}+2\Lambda+ 4\; \partial_{\mu} \varphi \partial^{\mu} \varphi \right \},
+\end{equation}
+where $\mathcal{R}$ is the scalar curvature of the space-time metric $g$, $\varphi$ is the dilaton field and  $\Lambda$ is the central charge.
+
+We consider a spatially homogeneous but not necessarily isotropic $(1+3+n)$-dimensional synchronous space-time metric that involves a maximally symmetric three dimensional flat external space metric and a compact $n$-dimensional flat internal space metric:
+\begin{equation}
+\label{eqn:HDmetric}
+{\rm d}s^2 = -{\rm d}t^2 + a^2(t) \left ( {\rm d}x^2 + {\rm d}y^2 +{\rm d}z^2 \right ) + s^2(t)
+\left ( {\rm d}\theta_{1}^{2} +...+  {\rm d}\theta_{n}^{2}\right ).
+\end{equation}
+Here $t$ is the cosmic time variable, $(x,y,z)$ are the Cartesian coordinates of the 3-dimensional flat space that represents the space we observe today, and $(\theta_1, ...,\theta_n)$ are the coordinates of the $n$-dimensional, compact (toroidal) internal space that represents the space that cannot be observed directly and locally today. The scale factors $a(t)$ of the 3-dimensional external space and $s(t)$ of the $n$-dimensional internal space are functions of $t$ only.
+
+We shall consider the higher dimensional steady state universe condition, which has been proposed in a recent study \cite{AkarsuDereli12HDSS}. Accordingly, we define a higher dimensional steady-state universe with two properties: (i) the higher dimensional universe has a constant volume as a whole but the internal and external spaces are dynamical, (ii) the energy density is constant in the higher dimensional universe. However in this study, we do not introduce any matter source in higher dimensions and hence it is enough if we consider only the first one of these properties. Accordingly, we assume that the volume scale factor of the higher dimensional universe, i.e. the $(3+n)$-dimensional volume, is constant:
+\begin{equation}
+\label{eqn:constvol}
+V=a^{3}s^{n}=V_{0}.
+\end{equation}
+$V_{0}$ is a positive real constant.
+
+Eventually we arrive at the following set of equations:
+\begin{equation}
+\label{eqn:12b}
+\frac{3}{2}\left(\frac{1}{n}+1\right)\frac{{\dot{a}}^2}{a^2}+\frac{3}{n}\frac{\ddot{a}}{a}-2\ddot{\varphi}+2{\dot{\varphi}}^2-\frac{6}{n}{\dot{\varphi}}\frac{\dot{a}}{a}+\Lambda=0,
+\end{equation}
+\begin{equation}
+\label{eqn:13b}
+\frac{3}{2}\left(\frac{3}{n}+1\right)\frac{{\dot{a}}^{2}}{a^2}-2{\ddot{\varphi}} +2{\dot{\varphi}}^{2}+\Lambda = 0,
+\end{equation}
+\begin{equation}
+\label{eqn:14b}
+\left(\frac{9}{2n}+\frac{5}{2}\right)\frac{\dot{a}^{2}}{a^2}-\frac{\ddot{a}}{a}-2{\ddot{\varphi}}+2{\dot{\varphi}}^{2}+2\frac{\dot{a}}{a}{\dot{\varphi}}+\Lambda=0,
+\end{equation}
+\begin{equation}
+\label{eqn:16b}
+-\frac{3}{2}\left(\frac{3}{n}+1\right)\frac{\dot{a}^{2}}{a^2}+2{\dot{\varphi}}^{2}+\Lambda = 0.
+\end{equation}
+Adding \eqref{eqn:16b} and \eqref{eqn:13b} side by side we find that
+\begin{equation}
+{\ddot{\varphi}}-2{\dot{\varphi}}^{2}=\Lambda,
+\end{equation}
+which yields
+\begin{equation}
+\varphi=-\frac{1}{4} \ln \left( \frac{2}{\Lambda} \left[c_1 \sin(\sqrt{2\Lambda}t) - c_2 \cos(\sqrt{2\Lambda}t)\right]^2 \right).
+\end{equation}
+Using this we find the deceleration parameter of the external space as follows:
+\begin{equation}
+q_a=-1+3\sqrt{\frac{3+n}{3n}}\frac{c_1 \cos(\sqrt{2\Lambda}t)+c_2 \sin(\sqrt{2\Lambda}t)}{\sqrt{c_1^2+c_2^2}}.
+\end{equation}
+To set $q_a=0.5$ for $t\sim0$ we should set
+\begin{equation}
+c_2=-\frac{1}{3}\,{\frac {\sqrt {3}\sqrt {n \left( n+12 \right) }{c_1}}{n}},
+\end{equation}
+which leads to the following deceleration parameter for the external space
+\begin{equation}
+q_a=-1+\frac{3}{2} \cos(\sqrt{2\Lambda}t)-\frac{3}{2} \sqrt{\frac{n+12}{3n}} \sin(\sqrt{2\Lambda}t).
+\end{equation}
+We note the factor in front of the sine term ranges, for $n$, between $-\sqrt{3}/2$ and $-\sqrt{39}/2$, i.e., $-3.12$ and $-0.87$. For $n=6$ it is $-1.5$, for $n=22$ it is $-1.08$. WE MAY TRY SOME CONSTRAINT WORKS FOR THIS HIGHER D MODEL AND CHECK THE CHI$^2$ VALUES ETC.
+
+THIS THEORETICAL MODEL IS DOING GREAT BUT ISSUE ABOUT THE FACTOR IN FRONT OF THE SINE TERM CAN BE INVESTIGATED AS AN SEPARATE THEORETICAL PAPER TO SEE WHAT CAN BE DONE TO MAKE IS SMALLER, E.G., SOME HIGHER ORDER CORRECTIONS OF STRING THEORY?....
+
+\begin{thebibliography}{*}
+\bibitem{delubac15} 
+T. Delubac et al., A\&A 574 (2015) A59 [arXiv:1404.1801v2 [astro-ph.CO]]
+\bibitem{sahni14} 
+V. Sahni, A. Shafieloo, A. A. Starobinsky, Astrophys. J. 793 (2014) L40 [arXiv:1406.2209v3 [astro-ph.CO]]
+%\bibitem{ef14} 
+%Efstathiou, G., MNRAS 440 (2014) 1138 
+%\bibitem{samushia13} 
+%L. Samushia et al., MNRAS 429 (2013) 1514 [arXiv:1206.5309v2 [astro-ph.CO]]
+\bibitem{aub14} 
+E. Aubourg et al. [BOSS Collaboration], [arXiv:1411.1074 [astro-ph.CO]].
+
+
+
+
+
+
+\end{thebibliography}
+
+
+
+\end{document}
+%\section{CLDP model as screened model of DE}
+%In a recent study, Delubac et al.\cite{delubac15} have estimated  $H(z=2.34)=222\pm7$km/s/Mpc by using 137,562 quasars in the redshift range $2.1\leq z\leq3.5$ from the Data Release 11 (DR11) of the Baryon Oscillation Spectroscopic Survey (BOSS) of SDSS-III, and reported that this value is in tension with CMB observations assuming $\Lambda$CDM scenario at around 2.5$\sigma$ level. In fact, this value of $H(z)$ is lower than the value predicted by $\Lambda$CDM model. Sahni et al. \cite{sahni14} have demonstrated that the lower value of $H(z)$ at higher redshifts can be achieved in screened models of DE, where the cosmological constant is screened by evolving DE term(s) in the past. Here, we show that the CLDP model \eqref{eqn:Hzfull} is a plausible screened model of DE.
+%
+%We can rewrite \eqref{eqn:Hzfull} as follows:
+%\begin{equation}
+%\label{eqn:Hzscreened}
+%H(z)=H_{0}\sqrt{\Omega_{\rm m0}\left(1+z\right)^{3}+\Omega_{\Lambda 0}-f(z)},
+%\end{equation}
+%where $f(z)=-[\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}+\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}+\Omega_{Z0}\left(1+z\right)^{-3}]$ is the screening term. To illustrate the screening mechanism, we plot matter source (Black curve),  cosmological constant density parameter (horizontal red line) and the screening term $f(z)$ (Green curve) are plotted vs z by choosing $k=\pi/2$ and $n=0.02$ in Fig.\ref{fig:screen}. We see that $f(z)$ (Green curve) evolves at a slower rate than the matter source (Black curve) at higher redshifts  in order to preserve the matter regime.  But later on, $f(z)$ (Green curve) balances the contribution of cosmological constant at the redshift where the $f(z)$ curve meets the horizontal Red line and $f(z)=\Omega_{\Lambda 0}$. Thus, $f(z)$ term screens the cosmological constant in the past.
+%
+%
+%
+%
+%
+%%Using the Hubble parameter \eqref{eqn:Hzfull}, the evolution of the deceleration parameter can be written as follows:
+%%\begin{equation}
+%%q=\frac{{\rm d}z}{{\rm d}t}\frac{{\rm d}}{{\rm d}z}\left(\frac{1}{H}\right)-1=\frac{\frac{1}{2}\Omega_{\rm m0}\left(1+z\right)^{3}-\frac{1}{4}\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}-\Omega_{\Lambda 0}-\frac{7}{4}\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}-\frac{5}{2}\Omega_{Z0}\left(1+z\right)^{-3}}{\Omega_{\rm m0}\left(1+z\right)^{3}+\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}+\Omega_{\Lambda 0}+\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}+\Omega_{Z0}\left(1+z\right)^{-3}},
+%%\end{equation}
+%%which gives
+%%\begin{equation}
+%%q_0\equiv q(z=0)=\frac{1}{2}\Omega_{\rm m0}-\frac{1}{4}\Omega_{X0}-\Omega_{\Lambda 0}-\frac{7}{4}\Omega_{Y0}-\frac{5}{2}\Omega_{Z0}
+%%\end{equation}
+%%for the present universe $q_{0}$.
+%
+%EoS parameter of the DE source is 
+%\begin{equation}
+%w_{\rm DE}=-1+\frac{\frac{1}{2}\Omega_{X0}\left(1+z\right)^{\frac{3}{2}}-\frac{1}{2}\Omega_{Y0}\left(1+z\right)^{-\frac{3}{2}}-\Omega_{Z0}\left(1+z\right)^{-3}}{\Omega_{\Lambda 0}-f(z)}.
+%\end{equation}
+%Notice that $w_{\rm DE}$ has a pole when $\Omega_{\Lambda 0}=f(z)$. However, the presence of such a pole does not indicate any pathologies since $w_{\rm DE}$ is the effective EoS parameter of DE  in the CLDP model under consideration \cite{sahni14}.
+%
+%In order to see whether the CLDP model can accommodate the expansion rates at higher redshifts given by  $H(z=0.57)=92.4\pm4.5$km/s/Mpc \cite{samushia13} and $H(z=2.34)=222\pm7$km/s/Mpc  \cite{delubac15}, we choose $H_0=70.6\pm3.3$km/s/Mpc, $k=\pi/2$ and $n=0.02$ to plot the evolution of $H(z)$ in the CLDP model, which is shown in  Fig. \ref{fig:hzscreen} by solid blue curve. The evolution of $H(z)$ in flat $\Lambda$CDM model is also shown by dotted Black curve with  $H_0=70.6\pm3.3$km/s/Mpc \cite{ef14} and $\Omega_{\rm m0}=0.28$. The left error bar (Green color) represents $H(z=0.57)=92.4\pm4.5$km/s/Mpc (left) \cite{samushia13} while the right one (Red color) stands for $H(z=2.34)=222\pm7$km/s/Mpc \cite{delubac15}. We see that the $H(z)$ curve of $\Lambda$CDM model passes through the left error bar but fails to pass through the right one, which is the tension reported in \cite{delubac15}. It is interesting to observe that the $H(z)$ curve of CLDP model passes through both the error bars, and hence it is capable of accommodating the low expansion rate at higher redshifts.
+%
+%%\begin{figure}[htb!]\centering
+%%\includegraphics[width=8cm]{Hzvszscreen.pdf}
+%%\caption{\footnotesize{Dotted Black curve: Evolution of $H(z)$ in flat $\Lambda$CDM model vs $z$ with  $H_0=70.6\pm3.3$km/s/Mpc \cite{ef14} and $\Omega_{\rm m0}=0.28$. Solid Blue curve: Evolution of $H(z)$ in flat $\Lambda$CDM model vs $z$ with  $H_0=70.6\pm3.3$km/s/Mpc, $k=\pi/2$ and $n=0.02$. The error bars (Red color) represent $H(z=0.57)=92.4\pm4.5$km/s/Mpc (left) \cite{samushia13} and $H(z=2.34)=222\pm7$km/s/Mpc (right) \cite{delubac15}}}
+%%\label{fig:hzscreen}
+%%\end{figure}
+%
+%
+
+%\section{SLDP model with $n=0$}
+%Choosing $n=0$,  we can write\eqref{eqn:Hzfull} in the form
+%\begin{equation}\label{eqn:Hzsp}
+%H(z)=H_0  \sqrt{ \Omega_{m0}(1+z)^{3}+2\sqrt{ \Omega_{m0}}(1-\sqrt{\Omega_{m0}})+(1-\sqrt{\Omega_{m0}})^2(1+z)^{-3}},
+%\end{equation}
+%where $\sqrt{\Omega_{m0}}=\cos ^2\left(k/2\right)$.
+%
+%Using the Hubble parameter \eqref{eqn:Hzsp}, the evolution of the deceleration parameter can be written as follows:
+%\begin{equation}
+%q=-1-\frac{3}{2}\left[\frac{1-\sqrt{\Omega_{m0}}-\sqrt{\Omega_{m0}}(1+z)^3}{1- \sqrt{\Omega_{m0}}+\sqrt{\Omega_{m0}}(1+z)^3}\right].
+%\end{equation}
+%
+%In this case, the EoS of the DE is 
+%\begin{equation}
+%w_{\rm DE}=-1-\frac{1-\sqrt{\Omega_{\rm m0}}}{1-\sqrt{\Omega_{\rm m0}} +2\sqrt{\Omega_{m0}}(1+z)^3}.
+%\end{equation}
+%
+%We find that $q$ varies from $0.5$ to $-2.5$ and $w_{\rm DE}$ varies from $-1$ to $-2$, as $z$ goes from $\infty$ to $-1$. It means the DE in the CLDP model \eqref{eqn:Hzsp} is characterized by a phantom field which remains subdominant in the matter regime. For the sake of illustration, we have shown the variation of $q$ and $w_{DE}$ with $\Omega_{\rm m0}=0.28$ in the redshift range $[-1,3]$ in Fig.\ref{fig:qwdesp}. We see that the transition of the Universe from deceleration to acceleration occurs at $z=0.64$. The present values of $q$ and $w_{\rm DE}$ are $q(z=0)=-0.91$ and $w_{\rm DE}(z=0)=-1.31$, respectively. 
+%
+
+%\begin{figure}[htb!]\centering
+%\psfrag{z}[b][b]{$z$}
+%\includegraphics[width=8cm]{qvsz.pdf}
+%\psfrag{w}[b][b]{$w_{\rm de}$}
+%\includegraphics[width=8cm]{wdevsz.pdf}
+%\caption{\footnotesize{Left panel shows variation of $q$ vs $z$ while the right panel shows the evolution of $w_{\rm de}$ vs $z$. In both cases, we have chosen $\Omega_{\rm m0}=0.28$.}}
+%\label{fig:qwdesp}
+%\end{figure}
+
+
+%\section{SLDP model with $n=0$ and an extra degree of freedom}
+% It is well known that we are not sure about the evolutionary behavior of DE. So phenomenologically there is a lot of room to play in the dark energy sector. In the expansion history of Universe given by \eqref{eqn:Hzsp}, we notice that the expression $2\sqrt{ \Omega_{m0}}(1-\sqrt{\Omega_{m0}})+(1-\sqrt{\Omega_{m0}})^2(1+z)^{-3}$ corresponds to the DE stuff in the CLDP model. Obviously, the expression $(1+z)^{-3}$ is responsible for the dynamical evolution of DE. We replace it by $(1+z)^\alpha$, where $\alpha$ is a free parameter to be determined/fixed by the cosmological observations. With this replacement, the CLDP model gets an additional degree of freedom, and its evolution history reads as
+% \begin{equation}\label{eqn:Hzalpha}
+%H(z)=H_0  \sqrt{ \Omega_{m0}(1+z)^{3}+2\sqrt{ \Omega_{m0}}(1-\sqrt{\Omega_{m0}})+(1-\sqrt{\Omega_{m0}})^2(1+z)^{\alpha}}.
+%\end{equation}
+%
+%
+%   
+%The EoS parameter of DE is given by
+%
+%\begin{equation}\label{eq:w_alpha}
+%w_{\rm DE}(z) =-1+ \frac{\alpha}{3}\left[ \frac{1-\sqrt{\Omega_{\rm m0}}}{1-\sqrt{\Omega_{\rm m0}} +2\sqrt{\Omega_{m0}}(1+z)^{-\alpha}}\right].
+%\end{equation}
+%
+%Notice that the model \eqref{eqn:Hzalpha} offers different types of evolution of the Universe according to the values of $\alpha$: (i) $\alpha=0$ reduces the DE part to a constant with $w_{\rm DE}(z) =-1$, and therefore the model represents the standard $\Lambda$CDM model. (ii) In the case $\alpha>0$, $w_{\rm DE}(z)$ evolves from $-1+\frac{\alpha}{3}$ to $-1$ as $z$ goes from $\infty$ to $-1$, and therefore the DE may be interpreted to be arising from a quintessence field. (iii) For $\alpha<0$, $w_{\rm DE}(z)$ varies from $-1$ to $-1+\frac{\alpha}{3}$ as $z$ varies from $\infty$ to $-1$, and therefore DE of the model behaves as a phantom field which remains subdominant in the matter regime as illustrated in the special case $\alpha=-3$ in section 3. The EoS parameters of some other known energy sources are listed in Table \ref{tab:sources}, which can be accommodated by the CLDP model under consideration. Notice that it has become possible because of the inception of additional degree of freedom in the CLDP model.
+%
+%
+%
+%\begin{table}[h]
+%\begin{center}
+%\begin{tabular}{cl}
+%\hline\hline
+%EoS Parameter & Name of Source\\ \hline
+%$1$	& stiff fluid/anisotropy \\
+%$\frac{1}{3}$ & radiation/relativistic fluid \\
+%$\gtrsim 0$	& warm dark matter  \\
+%$-\frac{2}{3}$ & Domain walls \\
+%$-\frac{1}{3}$ & Cosmic strings/spatial curvature \\
+%\hline\hline
+%\end{tabular}
+%\caption{List of the EoS parameters of some known energy sources}
+%\label{tab:sources}
+%\end{center}
+%\end{table}
+%
+%In the light of above discussion, it would be interesting to see the value/range of the parameter $\alpha$ suggested by the observations. Therefore, we confront the CLDP model \eqref{eqn:Hzalpha} with the latest observational data in the next section.
+%
+%
+%
+%
+%%\begin{figure}[htb!]\centering
+%%\psfrag{w}[b][b]{$w_{\rm de}$}
+%%\psfrag{z}[b][b]{$z$}
+%%\includegraphics[width=9cm]{Oz.pdf}
+%%\caption{\footnotesize{The EoS parameter of dark energy in CLDP model is plotted vs $z$, for 
+%%different $\alpha$ values. We observe that for positive $\alpha$ values, deviation from $\Lambda$CDM are more 
+%%noticeable. }}
+%%%\jav I'll add another plot of CMB if necessary, and can add more plots for different functions i.e. $q$.}}
+%%\label{fig:Oz}
+%%\end{figure}
+%%
+%%Figure (?) shows the behavior of $H$ and $w$ for different values of $\alpha$.
+%%\red{CMB plots: don't think they may be useful.. Because we started by modifying the background 
+%%evolution ($q$), but we can talk about that.}
+%\subsection{Observational Constraints}
+%%At the moment I have two codes to do the sampling process. One is the standard CosmoMC with updated datasets,
+%%however at the moment I'm testing its results. 
+%The code we're using, - is named SimpleMC and its written in python. The plots shown below were done
+%with this SimpleMC.
+%About datasets, I have included the following ones \red{(provide a short explanation of each one)}:
+%\begin{itemize}
+%\item CMB (Planck, WP)
+%\item SNe  (JLA from Betoule et al. 2014)
+%\item BAO (DR11LOWZ, DR11CMASS, MGS and Ly-$\alpha$: Auto, Cross)
+%\end{itemize}
+%
+%The 1D marginalized distribution on individual parameters and 2D contours with 68.3 \% and 95.4 \% confidence limits are shown in Fig.\ref{fig:LVDPzBR} for the CLDP model. The mean values of the CLDP model parameters $\Omega_m$ and $H_{0}$ constrained with $H(z)$+SN Ia data are given in Table \ref{table:CLDPobs}. The $1\sigma$, $2\sigma$ and $3\sigma$ errors, $\chi^2_{min}$ and $\chi^2_{min}$/dof are also given in Table \ref{table:CLDPobs}.
+%
+%
+% 
+%
+% 
+% 
+% 
+%
+%
+
+% \begin{figure}[htb!]\centering
+%\psfrag{w}[b][b]{$w_{\rm de}$}
+%\psfrag{z}[b][b]{$z$}
+%\includegraphics[width=8cm]{Plot_1_1D.pdf}
+%\caption{\footnotesize{1D marginalized posterior distributions, using two different combinations of datasets. \jav Seems like
+%$\alpha=-3$ is ruled out at high confidence level (bear in mind this is the first trial). But $\alpha=1$ is preferred 
+%by BAO and SN, interesting!! , the component $(1+z)^1$ sometimes is seen as cosmic strings.}}
+%\label{fig:Oz}
+%\end{figure}
+
+
+% \begin{figure}[htb!]\centering
+%\psfrag{w}[b][b]{$w_{\rm de}$}
+%\psfrag{z}[b][b]{$z$}
+%\includegraphics[width=8cm]{Plot_1_2D.pdf}
+%\includegraphics[width=8cm]{Plot_2_2D.pdf}
+%\caption{\footnotesize{2D marginalized posterior distributions, using two different combinations of datasets}}
+%\label{fig:Oz}
+%\end{figure}
+ 
+
+
+
+%\begin{table}[htb!]\small\centering
+%\caption{Constraints on parameter space of cosine model. Mean values are shown with 68\% and 95\% C.L.}\label{tab:results1}
+%\begin{tabular}{|l|ll|ll|}
+%\hline 
+%Data $\rightarrow$ & \multicolumn{2}{|c|}{Planck } &  \multicolumn{2}{c|}{Planck }\\\hline
+%Parameters & Mean with errors & Bestfit& Mean with errors & Bestfit \\ \hline 
+%k &      &  & 
+% \\[8pt]
+%$\Omega_b h^2$ & $    0.02231_{-    0.00023-    0.00045}^{+    0.00023+    0.00046}$ & $    0.02218$&$0.02228^{+0.00016+0.00032}_{-0.00016-0.00032}$ & $    0.02236$
+% \\[8pt]
+%$\Omega_c h^2$ & $0.1179^{+0.0022+0.0043}_{-0.0022-0.0042}$ & $    0.1183$&$0.1191^{+0.0015+0.0031}_{-0.0015-0.0029}$& $    0.1168$
+% \\[8pt]
+%$100\theta_{MC}$ & $1.04110^{+0.00049+0.00098}_{-0.00049-0.00093}$ & $    1.04096$& $1.04088^{+0.00033+0.00064}_{-0.00033-0.00066}$ & $    1.04104$
+% \\[8pt]
+%$\tau$ & $0.058^{+0.020+0.038}_{-0.020-0.038} $& $    0.051$& $0.056^{+0.019+0.038}_{-0.019-0.038}   $ & $    0.077$
+% \\[8pt]
+%$n_s$ & $0.969^{+0.006+0.013}_{-0.006-0.012}   $& $    0.968$& $0.9659^{+0.0049+0.0095}_{-0.0049-0.0096}$ & $    0.9726$
+% \\[8pt]
+%${\rm{ln}}(10^{10} A_s)$ & $3.046^{+0.038+0.075}_{-0.038-0.074}$ & $    3.036$&  $3.044^{+0.038+0.075}_{-0.038-0.074}   $& $    3.077$
+%\\[8pt]
+%$\Omega_k$ & $-0.005^{+0.009+0.015}_{-0.007-0.016}  $ & $    -0.006$&$-0.0037^{+0.0083+0.0140}_{-0.0065-0.0150}  $ & $    -0.0002$
+% \\[8pt]
+%\hline
+%
+%$\Omega_{\rm m0}$ & $0.327^{+0.027+0.063}_{-0.034-0.059}   $ & $    0.332$& $0.327^{+0.027+0.062}_{-0.034-0.058}   $ & $    0.302$
+% \\[8pt]
+%$H_0$ & $65.9^{+3.2+6.4}_{-3.2-6.1}        $ & $   65.2$& $66.1^{+3.1+6.2}_{-3.1-6.0}        $ & $   68.5$
+% \\[8pt]
+%${\rm{Age}}/{\rm{Gyr}}$ & $14.02^{+0.34+0.68}_{-0.34-0.67}     $ & $   14.07$& $13.96^{+0.33+0.65}_{-0.33-0.63}     $ & $   13.79$\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+\pagebreak
+\vspace{7cm}
+
+
+
+\begin{figure}[htb!]\centering
+\includegraphics[width=8.3cm]{Fig3a.pdf}
+\includegraphics[width=8.3cm]{Fig3b.pdf}
+\caption{\footnotesize{Plots of $D_M(z)/r_d\sqrt{z}$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP (left panel) and flat (right panel) $\Lambda$CDM models constrained by Planck+SN+BAO data.  In both panels, the error bars correspond to BOSS CMASS sample ($z=0.57$), LyaF auto-correlation ($z=2.34$) and LyaF-QSO cross correlation ($z=2.36$) measurements of $D_M/r_d$ as mentioned in Table II of Ref. \cite{aub14}.}}
+\label{fig:3}
+\end{figure}
+
+\begin{figure}[htb!]\centering
+\includegraphics[width=8.3cm]{Fig4a.pdf}
+\includegraphics[width=8.3cm]{Fig4b.pdf}
+\caption{\footnotesize{Plots of $D_V(z)/r_d\sqrt{z}$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP (left panel) and flat (right panel) $\Lambda$CDM models constrained by Planck+SN+BAO data.  In both panels, the error bars correspond to 6dFGS ($z=0.106$), MGS ($z=0.15$) and BOSS LOWZ Sample ($z=0.32$) measurements of $D_V/r_d$ as mentioned in Table II of Ref. \cite{aub14}.}}
+\label{fig:4}
+\end{figure}
+
+\begin{figure}[htb!]\centering
+\includegraphics[width=8.3cm]{Fig2a.pdf}
+\includegraphics[width=8.3cm]{Fig2b.pdf}
+\caption{\footnotesize{Left Panel: Plots of $zD_H(z)/r_d\sqrt{z}$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP (left panel) and flat (right panel) $\Lambda$CDM models constrained by Planck+SN+BAO data. In both panels, the error bars correspond to BOSS CMASS sample ($z=0.57$), LyaF auto-correlation ($z=2.34$) and LyaF-QSO cross correlation  ($z=2.36$) measurements of $D_H/r_d$ as mentioned in Table II of Ref.\cite{aub14}. Middle Panel: Plots of $D_M(z)/r_d\sqrt{z}$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP (left panel) and flat (right panel) $\Lambda$CDM models constrained by Planck+SN+BAO data.  In both panels, the error bars correspond to BOSS CMASS sample ($z=0.57$), LyaF auto-correlation ($z=2.34$) and LyaF-QSO cross correlation ($z=2.36$) measurements of $D_M/r_d$. Right Panel: }}
+\label{fig:2}
+\end{figure}
+
+\begin{figure}[htb!]\centering
+\includegraphics[width=8.3cm]{Fig5a.pdf}
+\includegraphics[width=8.3cm]{Fig5b.pdf}
+\caption{\footnotesize{Left Panel: Plot of $w_{DE}(z)$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP model. The horizontal red line stands for $w_\Lambda=-1$, the EoS parameter of dark energy in the $\Lambda$CDM model. Right Panel: Plots of $w_{eff}(z)$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP (Gray color) and $\Lambda$CDM (Red color) models.}}
+\label{fig:5}
+\end{figure}
+
+\begin{figure}[htb!]\centering
+\includegraphics[width=8.3cm]{Fig6a.pdf}
+\includegraphics[width=8.3cm]{Fig6b.pdf}
+\caption{\footnotesize{Left Panel: Plots of $q(z)$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP (Gray color) and $\Lambda$CDM (Red color) models. Right Panel: Plot of $j(z)$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP model. The horizontal red line stands for $j_\Lambda=1$, the jerk parameter in the $\Lambda$CDM model. Plots of $D_V(z)/r_d\sqrt{z}$ curve with 1$\sigma$ and 2$\sigma$ error bands for SLDP (left panel) and flat (right panel) $\Lambda$CDM models constrained by Planck+SN+BAO data.  In both panels, the error bars correspond to 6dFGS ($z=0.106$), MGS ($z=0.15$) and BOSS LOWZ Sample ($z=0.32$) measurements of $D_V/r_d$.}}
+\label{fig:5}
+\end{figure}
+
+
+%\section{SLDP from Low Energy String Effective Bosonic Action}
+%We consider gravi-dilaton string effective action with a cosmological constant in $(1+3+n)$-dimensions written in the {\sl string frame}:
+%\begin{equation}
+%\label{eqn:action}
+%I = \int_{\mathcal{M}} {\rm d}^{1+3+n}x \sqrt{|g|} e^{-2 \varphi} \left \{ \mathcal{R}+2\Lambda+ 4\; \partial_{\mu} \varphi \partial^{\mu} \varphi \right \},
+%\end{equation}
+%where $\mathcal{R}$ is the scalar curvature of the space-time metric $g$, $\varphi$ is the dilaton field and  $\Lambda$ is a cosmological constant. We note that the choices $1+3+n=10$ and $1+3+n=26$ correspond to the gravi-dilaton string effective action for the anomaly-free superstring and bosonic string theories, respectively.
+%
+%We consider a spatially homogeneous but not necessarily isotropic $(1+3+n)$-dimensional synchronous space-time metric that involves a maximally symmetric three dimensional flat external space metric and a compact $n$-dimensional flat internal space metric:
+%\begin{equation}
+%\label{eqn:HDmetric}
+%{\rm d}s^2 = -{\rm d}t^2 + a^2(t) \left ( {\rm d}x^2 + {\rm d}y^2 +{\rm d}z^2 \right ) + s^2(t)
+%\left ( {\rm d}\theta_{1}^{2} +...+  {\rm d}\theta_{n}^{2}\right ).
+%\end{equation}
+%Here $t$ is the cosmic time variable, $(x,y,z)$ are the Cartesian coordinates of the 3-dimensional flat space that represents the space we observe today, and $(\theta_1, ...,\theta_n)$ are the coordinates of the $n$-dimensional, compact (toroidal) internal space that represents the space that cannot be observed directly and locally today. The scale factors $a(t)$ of the 3-dimensional external space and $s(t)$ of the $n$-dimensional internal space are functions of $t$ only.
+%
+%We shall consider the higher dimensional steady state universe condition, which has been proposed in a recent study \cite{AkarsuDereli12HDSS}. Accordingly, we define a higher dimensional steady-state universe with two properties: (i) the higher dimensional universe has a constant volume as a whole but the internal and external spaces are dynamical, (ii) the energy density is constant in the higher dimensional universe. However in this study, we do not introduce any matter source in higher dimensions and hence it is enough if we consider only the first one of these properties. Accordingly, we assume that the volume scale factor of the higher dimensional universe, i.e. the $(3+n)$-dimensional volume, is constant:
+%\begin{equation}
+%\label{eqn:constvol}
+%V=a^{3}s^{n}=V_{0}.
+%\end{equation}
+%$V_{0}$ is a positive real constant.
+%
+%Eventually we arrive at the following set of equations:
+%\begin{equation}
+%\label{eqn:12b}
+%\frac{3}{2}\left(\frac{1}{n}+1\right)\frac{{\dot{a}}^2}{a^2}+\frac{3}{n}\frac{\ddot{a}}{a}-2\ddot{\varphi}+2{\dot{\varphi}}^2-\frac{6}{n}{\dot{\varphi}}\frac{\dot{a}}{a}+\Lambda=0,
+%\end{equation}
+%\begin{equation}
+%\label{eqn:13b}
+%\frac{3}{2}\left(\frac{3}{n}+1\right)\frac{{\dot{a}}^{2}}{a^2}-2{\ddot{\varphi}} +2{\dot{\varphi}}^{2}+\Lambda = 0,
+%\end{equation}
+%\begin{equation}
+%\label{eqn:14b}
+%\left(\frac{9}{2n}+\frac{5}{2}\right)\frac{\dot{a}^{2}}{a^2}-\frac{\ddot{a}}{a}-2{\ddot{\varphi}}+2{\dot{\varphi}}^{2}+2\frac{\dot{a}}{a}{\dot{\varphi}}+\Lambda=0,
+%\end{equation}
+%\begin{equation}
+%\label{eqn:16b}
+%-\frac{3}{2}\left(\frac{3}{n}+1\right)\frac{\dot{a}^{2}}{a^2}+2{\dot{\varphi}}^{2}+\Lambda = 0.
+%\end{equation}
+%
+%We obtain the dilaton field as follows:
+%\begin{equation}
+%\varphi=-\frac{1}{2}\ln{\left(\sqrt{\frac{\mathcal{E}}{\Lambda}}\sin (\sqrt{2\Lambda}\;t)\right)},\quad 0\leq t \leq \frac{\pi}{\sqrt{2\Lambda}},
+%\end{equation}
+%where $\mathcal{E}$ is a real constant of integration. We obtain the scale factors, Hubble and deceleration parameters of the external and internal spaces as follows:
+%\begin{eqnarray}
+%a=a_{1}\,e^{\frac{1}{3}\sqrt{\frac{3n}{3+n}}\,{\rm{arctanh}}\left(-\cos(\sqrt{2\Lambda}\;t)\right)}\\
+%H_{a}=\frac{1}{3}\sqrt{\frac{3n}{3+n}}\;\frac{\sqrt{2\Lambda}}{\sin(\sqrt{2\Lambda}\; t)}\\
+%q_{a}=-1+3\sqrt{\frac{3+n}{3n}}\;\cos(\sqrt{2\Lambda}\; t)
+%\end{eqnarray}
+%İnternal
+%\begin{eqnarray}
+%s=s_{1}\,e^{-\frac{1}{n}\sqrt{\frac{3n}{3+n}}\,{\rm{arctanh}}\left(-\cos(\sqrt{2\Lambda}\;t)\right)}\\
+%H_{s}=-\frac{1}{n}\sqrt{\frac{3n}{3+n}}\;\frac{\sqrt{2\Lambda}}{\sin(\sqrt{2\Lambda}\; t)}\\
+%q_{s}=-1-n\sqrt{\frac{3+n}{3n}}\;\cos(\sqrt{2\Lambda}\; t)
+%\end{eqnarray}
+%Here $a_{1}$ and $s_{1}$ are integration constants that obey ${a_{1}}^3{s_{1}}^n=V_{0}$. We note the deceleration parameter of the external space yields the form of cosine law. The factor in front of the cosine termi, on the other hand, is not arbitrary but dependent of the number of internal dimensions $n$ and can get values between $2\sqrt{3}$ and $\sqrt{3}$. $q_{a}=2\sqrt{3}-1$ and $q_{a}=\sqrt{3}-1$.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
